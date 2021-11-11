@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using QuizApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Text;
 
@@ -66,5 +67,6 @@ namespace QuizApp.DAO
 
             return result;
         }
+
     }
 }

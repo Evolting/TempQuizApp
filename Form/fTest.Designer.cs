@@ -29,7 +29,7 @@ namespace QuizApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbQuestion = new System.Windows.Forms.ComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTest));
             this.label1 = new System.Windows.Forms.Label();
             this.rtbQuestion = new System.Windows.Forms.RichTextBox();
             this.gbAnswer = new System.Windows.Forms.GroupBox();
@@ -41,26 +41,24 @@ namespace QuizApp
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cbSubmit = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpQuestion = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbTimer = new System.Windows.Forms.Label();
+            this.txtQuestion = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSetID = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.gbAnswer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbQuestion
-            // 
-            this.cbQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbQuestion.FormattingEnabled = true;
-            this.cbQuestion.Location = new System.Drawing.Point(351, 94);
-            this.cbQuestion.Name = "cbQuestion";
-            this.cbQuestion.Size = new System.Drawing.Size(93, 28);
-            this.cbQuestion.TabIndex = 0;
-            this.cbQuestion.SelectedIndexChanged += new System.EventHandler(this.cbQuestion_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 97);
+            this.label1.Location = new System.Drawing.Point(180, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 1;
@@ -70,7 +68,7 @@ namespace QuizApp
             // 
             this.rtbQuestion.Location = new System.Drawing.Point(180, 128);
             this.rtbQuestion.Name = "rtbQuestion";
-            this.rtbQuestion.Size = new System.Drawing.Size(808, 422);
+            this.rtbQuestion.Size = new System.Drawing.Size(793, 422);
             this.rtbQuestion.TabIndex = 2;
             this.rtbQuestion.Text = "";
             // 
@@ -147,7 +145,7 @@ namespace QuizApp
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(894, 38);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 660);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(94, 29);
             this.btnSubmit.TabIndex = 5;
@@ -158,7 +156,7 @@ namespace QuizApp
             // cbSubmit
             // 
             this.cbSubmit.AutoSize = true;
-            this.cbSubmit.Location = new System.Drawing.Point(18, 12);
+            this.cbSubmit.Location = new System.Drawing.Point(12, 584);
             this.cbSubmit.Name = "cbSubmit";
             this.cbSubmit.Size = new System.Drawing.Size(138, 24);
             this.cbSubmit.TabIndex = 6;
@@ -170,68 +168,134 @@ namespace QuizApp
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(673, 4);
+            this.label2.Location = new System.Drawing.Point(12, 637);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(315, 20);
+            this.label2.Size = new System.Drawing.Size(130, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Check your submission carefully before submit";
+            this.label2.Text = "Click here to finish";
             // 
-            // button1
+            // flpQuestion
             // 
-            this.button1.Location = new System.Drawing.Point(495, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
+            this.flpQuestion.Location = new System.Drawing.Point(180, 556);
+            this.flpQuestion.Name = "flpQuestion";
+            this.flpQuestion.Size = new System.Drawing.Size(793, 133);
+            this.flpQuestion.TabIndex = 10;
             // 
-            // button2
+            // lbTimer
             // 
-            this.button2.Location = new System.Drawing.Point(180, 93);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 29);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Prev";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lbTimer.AutoSize = true;
+            this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTimer.ForeColor = System.Drawing.Color.Red;
+            this.lbTimer.Location = new System.Drawing.Point(374, 36);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(176, 81);
+            this.lbTimer.TabIndex = 11;
+            this.lbTimer.Text = "00:00";
             // 
-            // flowLayoutPanel1
+            // txtQuestion
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 566);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(976, 125);
-            this.flowLayoutPanel1.TabIndex = 10;
+            this.txtQuestion.Location = new System.Drawing.Point(254, 90);
+            this.txtQuestion.Name = "txtQuestion";
+            this.txtQuestion.ReadOnly = true;
+            this.txtQuestion.Size = new System.Drawing.Size(70, 27);
+            this.txtQuestion.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(797, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 119);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.Location = new System.Drawing.Point(699, 12);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.ReadOnly = true;
+            this.txtUserID.Size = new System.Drawing.Size(70, 27);
+            this.txtUserID.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(625, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "User ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(625, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Set ID";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(577, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Total Question";
+            // 
+            // txtSetID
+            // 
+            this.txtSetID.Location = new System.Drawing.Point(699, 50);
+            this.txtSetID.Name = "txtSetID";
+            this.txtSetID.ReadOnly = true;
+            this.txtSetID.Size = new System.Drawing.Size(70, 27);
+            this.txtSetID.TabIndex = 18;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(699, 90);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(70, 27);
+            this.txtTotal.TabIndex = 19;
             // 
             // fTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 709);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(993, 701);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtSetID);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtUserID);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtQuestion);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbTimer);
+            this.Controls.Add(this.flpQuestion);
             this.Controls.Add(this.cbSubmit);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.gbAnswer);
             this.Controls.Add(this.rtbQuestion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbQuestion);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTest";
             this.Load += new System.EventHandler(this.fTest_Load);
             this.gbAnswer.ResumeLayout(false);
             this.gbAnswer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbQuestion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbQuestion;
         private System.Windows.Forms.GroupBox gbAnswer;
@@ -243,8 +307,15 @@ namespace QuizApp
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.CheckBox cbSubmit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpQuestion;
+        private System.Windows.Forms.Label lbTimer;
+        private System.Windows.Forms.TextBox txtQuestion;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSetID;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

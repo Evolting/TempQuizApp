@@ -106,14 +106,32 @@ namespace QuizApp
             {
                 QuizDAO qdb = new QuizDAO();
 
+                int duration = Convert.ToInt32(numTimer.Value.ToString());
                 int setID = Int32.Parse(txtSetID.Text);
+
                 Test test = new Test();
                 test.score = 0;
                 test.questions = qdb.createQuestions(setID);
-                fTest f = new fTest(test, setID);
+                fTest f = new fTest(test, setID, duration);
                 f.ShowDialog();
             }
             else MessageBox.Show("You should add a few more quiz.");
+        }
+
+        private void btnAttempt_Click(object sender, EventArgs e)
+        {
+            int userID = Int32.Parse(txtUserID.Text);
+            int setID = Int32.Parse(txtSetID.Text);
+            fAttempt fAtt = new fAttempt(userID, setID);
+            fAtt.ShowDialog();
+        }
+
+        private void btnHighest_Click(object sender, EventArgs e)
+        {
+            int userID = Int32.Parse(txtUserID.Text);
+            int setID = Int32.Parse(txtSetID.Text);
+            fTopScore fTop = new fTopScore(setID);
+            fTop.ShowDialog();
         }
     }
 }

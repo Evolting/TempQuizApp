@@ -106,6 +106,7 @@ namespace QuizApp
             this.Controls.Add(this.rtxtDefinition);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtTerm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fQuizUpdate";
             this.Text = "Update Quiz";
             this.Load += new System.EventHandler(this.fQuizUpdate_Load);

@@ -83,6 +83,7 @@ namespace QuizApp
             this.Controls.Add(this.dgvResult);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fResult";
             this.Text = "fResult";
             this.Load += new System.EventHandler(this.fResult_Load);

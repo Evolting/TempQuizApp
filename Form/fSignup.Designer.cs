@@ -140,7 +140,7 @@ namespace QuizApp
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // Signup
+            // fSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -156,7 +156,8 @@ namespace QuizApp
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
             this.Controls.Add(this.title);
-            this.Name = "Signup";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "fSignup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.ResumeLayout(false);
